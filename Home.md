@@ -1,4 +1,4 @@
-** Welcome to the OctoPrint-KnowledgeBase wiki! **
+# Welcome to the OctoPrint-KnowledgeBase wiki!
 
 This wiki covers the following topics (no special order):
 * [Setup IDE](Setup-IDE)
