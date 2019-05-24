@@ -28,7 +28,7 @@ Settings / <select your repository>
 4. Add ```.travis.yml``` in your root repository
 see [.travis.yml](#travisyml)
 
-5. Change your update url in the __init__.py file
+5. Change your update url in the ```__init__.py``` file
 ```
 __init__.py
 --------
