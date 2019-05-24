@@ -3,6 +3,47 @@ Example could be found here: https://github.com/OllisGit/OctoPrint-CICD_Playgrou
 
 ![PluginStatisics](images/plugin-statistics.png)
 
+----------
+# Short Description
+1. Insert badgeds to your README.md
+```
+[![Version](https://img.shields.io/badge/dynamic/json.svg?color=brightgreen&label=version&url=https://api.github.com/repos/OllisGit/OctoPrint-CICD_Playground/releases&query=$[0].name)]()
+
+[![Released](https://img.shields.io/badge/dynamic/json.svg?color=brightgreen&label=released&url=https://api.github.com/repos/OllisGit/OctoPrint-CICD_Playground/releases&query=$[0].published_at)]()
+
+![GitHub Releases (by Release)](https://img.shields.io/github/downloads/OllisGit/OctoPrint-CICD_Playground/latest/total.svg)
+```
+***Just replace the Gitlab-URL and your are fine!***
+
+2. Activate WebHook in your GitHub-Repository
+```  
+Settings / Webhooks 
+    https://notify.travis-ci.org
+```
+
+3. Activate your Repository in Travis
+```  
+    https://travis-ci.org/
+Settings / <select your repository>
+```
+
+4. Add ```.travis.yml``` in your root repository
+see [.travis.yml](#.travis.yml)
+
+5. Change your update url in the __init__.py file
+```
+__init__.py
+--------
+##~~ Softwareupdate hook
+def get_update_information(self):
+...
+pip="https://github.com/OllisGit/OctoPrint-CICD_Playground/releases/latest/download/master.zip"
+```
+***Just replace the Gitlab-URL and your are fine!***
+
+----------
+# Detailed Description
+
 The solution is based on the following steps
 
 1. Create badge-image: done via [http://shields.io](http://shields.io/)
@@ -51,9 +92,9 @@ So, it is necessary to create an release asset zip-file of the current sourcecod
 In my case the travis build is triggerd when I push something to the repo. The build creates an zip-file of the current master branch, creates a draft-release and attach the zip file as “master.zip” to the draft-release as an asset.
 
 It was a little bit tricky to update an release, but thank google this problem could be solved. 
-If you need more info about the build-job just let me know or look into the example or look below [Setup Travis](#setup-travis))
+If you need more info about the build-job just let me know or look into the example or look below [Setup Travis](#setup-travis)
 
-4 ) Normally the pip upload url looks like this: 
+4 ) Normally the pip update url looks like this: 
 `pip="https://github.com/OllisGit/OctoPrint-CICD_Playground/archive/{target_version}.zip`
 
 You need to change it to:
@@ -95,9 +136,8 @@ Following steps are needed:
 
 - Copy `.travis.yml` to your Octoprint root folder (no changes needed)
 
+## .travis.yml
 ``` 
-.travis.yml
------------
 ##
 ## Simple script to build a zip file of the whole repository
 ##
