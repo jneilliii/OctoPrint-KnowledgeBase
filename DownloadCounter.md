@@ -8,9 +8,7 @@ Example could be found here: https://github.com/OllisGit/OctoPrint-CICD_Playgrou
 1. Insert badgeds to your README.md
 ```
 [![Version](https://img.shields.io/badge/dynamic/json.svg?color=brightgreen&label=version&url=https://api.github.com/repos/OllisGit/OctoPrint-CICD_Playground/releases&query=$[0].name)]()
-
 [![Released](https://img.shields.io/badge/dynamic/json.svg?color=brightgreen&label=released&url=https://api.github.com/repos/OllisGit/OctoPrint-CICD_Playground/releases&query=$[0].published_at)]()
-
 ![GitHub Releases (by Release)](https://img.shields.io/github/downloads/OllisGit/OctoPrint-CICD_Playground/latest/total.svg)
 ```
 ***Just replace the Gitlab-URL and your are fine!***
@@ -76,9 +74,7 @@ More descriptions how to use this could be found here: https://shields.io/#dynam
 **Finaly the Markdown looks like this:**
 ```
 [![Version](https://img.shields.io/badge/dynamic/json.svg?color=brightgreen&label=version&url=https://api.github.com/repos/OllisGit/OctoPrint-CICD_Playground/releases&query=$[0].name)]()
-
 [![Released](https://img.shields.io/badge/dynamic/json.svg?color=brightgreen&label=released&url=https://api.github.com/repos/OllisGit/OctoPrint-CICD_Playground/releases&query=$[0].published_at)]()
-
 ![GitHub Releases (by Release)](https://img.shields.io/github/downloads/OllisGit/OctoPrint-CICD_Playground/latest/total.svg)
 ```
 *Just replace the Gitlab-URL and your are fine!*
