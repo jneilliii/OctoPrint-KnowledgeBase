@@ -19,10 +19,13 @@ Settings / Webhooks
     https://notify.travis-ci.org
 ```
 
-3. Activate your Repository in Travis
+3. Activate your Repository in Travis https://travis-ci.org/ and add the AccessToken to Env-Variable
 ```  
-    https://travis-ci.org/
-Settings / <select your repository>
+Profile / Settings / <select your repository>
+
+<your repository> / Settings / Environment Variables
+
+`GITHUB_TOKEN = 483f7219e9e15d70....`
 ```
 
 4. Add ```.travis.yml``` in your root repository
