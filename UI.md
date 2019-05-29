@@ -2,7 +2,9 @@
 - [How does the UI-Communication work](#how-does-the-ui-communication-work)
 - [Knockout in Octoprint](#knockout-in-octoprint)
 - [Available ViewModels](#available-viewmodels)
-- [Hijack Print-Button](#hijack-print-button)
+- [Hijack Print/Resume-Button](#hijack-printresume-button)
+- [Create Modal-Dialog](#create-modal-dialog)
+- [Spinning Button](#spinning-button)
 
 
 # Octoprint UI-Sections
@@ -65,13 +67,13 @@ Source: https://knockoutjs.com/
             ]
         });
     });
-```
+    ```
 
 2. Simple Textfield-Binding
-   In your template:
+   in your template:
    ```html
     ...
-    <input type="text" name="myTextField" data-bind="value: myTextFieldValue">
+    <input type="text" name="myTextField" data-bind="textInput: myTextFieldValue">
     ...
    ```
    In your PluginId.js
@@ -80,6 +82,7 @@ Source: https://knockoutjs.com/
     self.myTextFieldValue = ko.observable();
     ...
    ```
+    List of all knockout-bindings: https://knockoutjs.com/documentation/text-binding.html
 
 
 # Available ViewModels
@@ -98,6 +101,99 @@ Also on this page there are all "Event-Hooks" listed. E.g.:
    ```
 
 
+# Hijack Print/Resume-Button
+    const startPrint = self.printerStateViewModel.print;
+    self.printerStateViewModel.print = function confirmSpoolSelectionBeforeStartPrint() {
+        alert("pre vaildate stuff");
+        // printAllowed = showDialog();
+        startPrint();
+    };
 
-# Hijack Print-Button
+    const resumePrint = self.printerStateViewModel.resume;
+    self.printerStateViewModel.resume = function confirmSpoolSelectionBeforeResumePrint() {
+        // do you resume stuff
+        resumePrint();
+    };
+    
+    ....
+    dependencies: [  
+        ...
+        "printerStateViewModel"  
+    ],
 
+# Create Modal-Dialog
+You need two parts:
+1. HTML-Template for the Dialog-Content
+2. JavaScript function to show/hide dialog
+
+
+```html
+<!-- Modal-Dialog -->
+<div id="sidebar_simpleDialog" class="modal hide fade">
+    <div class="modal-header">
+        <a href="#" class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
+        <h3 class="modal-title">This is the Dialog-Title</h3>
+    </div>
+    <div class="modal-body">
+        <h4>Dialog-Content</h4>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-cancel" data-dismiss="modal" aria-hidden="true">Cancel</button>
+        <button class="btn btn-danger btn-confirm">Confirm</button>
+    </div>
+</div>
+```
+
+```javascript
+showDialog("#sidebar_simpleDialog", function(dialog){
+    // printAllowed = showDialog();
+    startPrint();
+    dialog.modal('hide');
+});
+
+...
+
+function showDialog(dialogId, confirmFunction){
+        // show dialog
+        // sidebar_deleteFilesDialog
+        var myDialog = $(dialogId);
+        var confirmButton = $("button.btn-confirm", myDialog);
+        var cancelButton = $("button.btn-cancel", myDialog);
+        //var dialogTitle = $("h3.modal-title", editDialog);
+
+        confirmButton.unbind("click");
+        confirmButton.bind("click", function() {
+            alert ("Do something");
+            confirmFunction(myDialog);
+        });
+        editDialog.modal({
+            //minHeight: function() { return Math.max($.fn.modal.defaults.maxHeight() - 80, 250); }
+        }).css({
+            width: 'auto',
+            'margin-left': function() { return -($(this).width() /2); }
+        });
+}
+```
+
+
+# Spinning Button
+
+    <i class="fa fa-spinner fa-spin" data-bind="enabled:!requestInProgress(), css: {disabled: requestInProgress()}, visible: requestInProgress()"></i> 
+
+
+    self.requestInProgress(true);
+    $.ajax({
+        url: API_BASEURL + "plugin/"+PLUGIN_ID,
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify({
+            command: "deleteConfirmed",
+        }),
+        contentType: "application/json; charset=UTF-8"
+    }).done(function(data){
+
+        //alert("back from server");
+        editDialog.modal("hide");
+    }).always(function(){
+        self.requestInProgress(false);
+    }) ;
