@@ -1,5 +1,9 @@
-- [h1](#h1)
-  - [h3](#h3)
+- [Octoprint UI-Sections](#octoprint-ui-sections)
+- [How does the UI-Communication work](#how-does-the-ui-communication-work)
+- [Knockout in Octoprint](#knockout-in-octoprint)
+- [Available ViewModels](#available-viewmodels)
+- [Hijack Print-Button](#hijack-print-button)
+
 
 # Octoprint UI-Sections
 The UI of Octoprint is seperated in the following areas. Each area could be adapted withj a Jina2-Template.
@@ -29,39 +33,39 @@ Octoprint use https://knockoutjs.com/ for UI-Widget to JavaScript-Model Binding 
 ![OverviewExample](images/knockout-example.png)
 Source: https://knockoutjs.com/
 
-## Knockout in Octoprint
+# Knockout in Octoprint
 1. Create JavaScript file and add it to the getAsset()-Section in ```__init__.py```
 
     Minimal JavaScript-File: PluginId.js
 
     ```javascript 
     $(function() {
-    function PauseAtViewModel(parameters) {
-        var self = this;
+        function PauseAtViewModel(parameters) {
+            var self = this;
 
-        // assign the injected parameters, e.g.:
-        self.loginStateViewModel = parameters[0];
-        self.settingsViewModel = parameters[1];
+            // assign the injected parameters, e.g.:
+            self.loginStateViewModel = parameters[0];
+            self.settingsViewModel = parameters[1];
 
-        // TODO: Implement your plugin's view model here.
-    }
+            // TODO: Implement your plugin's view model here.
+        }
 
-    /* view model class, parameters for constructor, container to bind to
-     * Please see http://docs.octoprint.org/en/master/plugins/viewmodels.html#registering-custom-viewmodels for more details
-     * and a full list of the available options.
-     */
-    OCTOPRINT_VIEWMODELS.push({
-        construct: PauseAtViewModel,
-        // ViewModels your plugin depends on, e.g. loginStateViewModel, settingsViewModel, ...
-        dependencies: [  "loginStateViewModel", "settingsViewModel"  ],
-        // Elements to bind to, e.g. #settings_plugin_PauseAt, #tab_plugin_PauseAt, ...
-        elements: [
-            document.getElementById("pauseat_plugin_settings"),
-            document.getElementById("pauseat_plugin_sidebar")
-        ]
+        /* view model class, parameters for constructor, container to bind to
+        * Please see http://docs.octoprint.org/en/master/plugins/viewmodels.html#registering-custom-viewmodels for more details
+        * and a full list of the available options.
+        */
+        OCTOPRINT_VIEWMODELS.push({
+            construct: PauseAtViewModel,
+            // ViewModels your plugin depends on, e.g. loginStateViewModel, settingsViewModel, ...
+            dependencies: [  "loginStateViewModel", "settingsViewModel"  ],
+            // Elements to bind to, e.g. #settings_plugin_PauseAt, #tab_plugin_PauseAt, ...
+            elements: [
+                document.getElementById("pauseat_plugin_settings"),
+                document.getElementById("pauseat_plugin_sidebar")
+            ]
+        });
     });
-});
-    ```
+```
 
 2. Simple Textfield-Binding
    In your template:
@@ -77,11 +81,12 @@ Source: https://knockoutjs.com/
     ...
    ```
 
-3. Available ViewModels
-    In the abouve example we saw some injected viewmodels, e.g. loginStateViewModel, here you can find an overview of all viewmodels:
-    http://docs.octoprint.org/en/master/plugins/viewmodels.html
-    
-    Also on this page there are all "Event-Hooks" listed. E.g.:
+
+# Available ViewModels
+In the above example we saw some injected viewmodels, e.g. loginStateViewModel, here you can find an overview of all viewmodels:
+http://docs.octoprint.org/en/master/plugins/viewmodels.html
+
+Also on this page there are all "Event-Hooks" listed. E.g.:
    ```javascript
     ...
     // Data send from backend to frontend
@@ -94,11 +99,5 @@ Source: https://knockoutjs.com/
 
 
 
-
-
-
-
 # Hijack Print-Button
-
-## h3
 
