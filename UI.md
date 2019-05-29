@@ -124,9 +124,6 @@ Also on this page there are all "Event-Hooks" listed. E.g.:
 # Create Modal-Dialog
 You need two parts:
 1. HTML-Template for the Dialog-Content
-2. JavaScript function to show/hide dialog
-
-
 ```html
 <!-- Modal-Dialog -->
 <div id="sidebar_simpleDialog" class="modal hide fade">
@@ -143,7 +140,7 @@ You need two parts:
     </div>
 </div>
 ```
-
+2. JavaScript function to show/hide dialog
 ```javascript
 showDialog("#sidebar_simpleDialog", function(dialog){
     // printAllowed = showDialog();
