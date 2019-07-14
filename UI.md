@@ -9,9 +9,9 @@
 
 
 # Octoprint UI-Sections
-The UI of Octoprint is seperated in the following areas. Each area could be adapted withj a Jina2-Template.
+The UI of Octoprint is seperated in the following areas. Each area could be adapted with a Jina2-Template.
 
-Just us the following namingconventions (path: ```/templates/'yourpluginId'_'area'.jinja2```)
+Just use the following namingconventions (path: ```/templates/'yourpluginId'_'area'.jinja2```)
 
 Areas
 * <plugin_identifier>_tab.jinja2			-> Tab
@@ -39,9 +39,11 @@ Source: https://knockoutjs.com/
 # Knockout in Octoprint
 1. Create JavaScript file and add it to the getAsset()-Section in ```__init__.py```
 
-    Minimal JavaScript-File: PluginId.js
+    Minimal JavaScript-File: _pluginId_.js
 
-    ```javascript 
+    Sample: _PauseAt.js_
+
+    ```javascript
     $(function() {
         function PauseAtViewModel(parameters) {
             var self = this;
