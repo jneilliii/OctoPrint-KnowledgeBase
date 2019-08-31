@@ -3,7 +3,10 @@ http://docs.octoprint.org/en/master/plugins/gettingstarted.html
 
 https://github.com/foosel/OctoPrint/wiki/Setup-on-Windows
 
-Precondition: Octoprint is installed 
+Preconditions: 
+- Octoprint is installed
+- Cookiecutter installed 
+	pip install "cookiecutter>=1.4,<1.7" 
 
 	octoprint dev plugin:new DryRun
 	plugin_package [octoprint_DryRun]:
