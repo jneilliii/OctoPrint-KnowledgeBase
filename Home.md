@@ -3,6 +3,7 @@
 This wiki covers the following topics (no special order):
 * [Setup IDE](Setup-IDE)
 * [Plugin Template](PluginTemplate) 
+* [I18N](I18N)
 * [UI](UI) 
 * [Send Data to the Browser](SendDataToBrowser)
 * [Send Data to the Backend](SendDataToBackend)
