@@ -53,3 +53,17 @@ Add Run Configuration
 
 https://docs.octoprint.org/en/master/development/virtual_printer.html
 
+edit in `config.yml`
+```
+# Settings only relevant for development
+devel:
+
+  webassets:
+    bundle: false
+	
+  # Settings for the virtual printer
+  virtualPrinter:
+
+    # Whether to enable the virtual printer and include it in the list of available serial connections.
+    # Defaults to fa
+```
