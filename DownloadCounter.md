@@ -165,4 +165,6 @@ deploy:
   overwrite: true
   skip_cleanup: true
   target_commitish: $TRAVIS_COMMIT
+  on:
+    tags: false
 ```
