@@ -7,7 +7,7 @@ This wiki covers the following topics (no special order):
 * [UI](UI)
 * [Logging](Logging) 
 * [Send Data to the Browser](SendDataToBrowser)
-* [Send Data to the Backend](SendDataToBackend)
+* [Receiving Data via REST API](RestAPI)
 * [Read/Write Settings](ReadWriteSettings)
 * [Reset to default settings values](ResetDefaultSettings)
 * [Event System](EventSystem)
