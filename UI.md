@@ -1,5 +1,6 @@
 - [Octoprint UI-Sections](#octoprint-ui-sections)
 - [How does the UI-Communication work](#how-does-the-ui-communication-work)
+- [ViewModel Callbacks](#viewModelCallbacks)
 - [Knockout in Octoprint](#knockout-in-octoprint)
 - [Available ViewModels](#available-viewmodels)
 - [Hijack Print/Resume-Button](#hijack-printresume-button)
@@ -35,6 +36,10 @@ Octoprint use https://knockoutjs.com/ for UI-Widget to JavaScript-Model Binding 
 
 ![OverviewExample](images/knockout-example.png)
 Source: https://knockoutjs.com/
+
+# ViewModel Callbacks
+
+https://docs.octoprint.org/en/master/plugins/viewmodels.html#callbacks
 
 # Knockout in Octoprint
 1. Create JavaScript file and add it to the getAsset()-Section in ```__init__.py```
