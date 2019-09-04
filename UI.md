@@ -1,6 +1,6 @@
 - [Octoprint UI-Sections](#octoprint-ui-sections)
 - [How does the UI-Communication work](#how-does-the-ui-communication-work)
-- [ViewModel Callbacks](##viewmodel-callbacks)
+- [ViewModel Callbacks](#viewmodel-callbacks)
 - [Knockout in Octoprint](#knockout-in-octoprint)
 - [Available ViewModels](#available-viewmodels)
 - [Hijack Print/Resume-Button](#hijack-printresume-button)
