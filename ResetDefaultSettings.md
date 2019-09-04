@@ -20,7 +20,7 @@ TODO Screenshot
 
                 return flask.jsonify(self.get_settings_defaults())
 ```
-4) Assign Default/Vallues after reset to ViewModel in your JavaScript
+4) Assign default values after reset to the ViewModel in your JavaScript
 ```javascript
         var PLUGIN_ID = "AutostartPrint"; // from setup.py plugin_identifier       
         // enable support of resetSettings
