@@ -39,6 +39,26 @@ Source: https://knockoutjs.com/
 
 # ViewModel Callbacks
 
+JavaScript call backs like:
+```javascript
+        // receive data from server
+        self.onDataUpdaterPluginMessage = function (plugin, data) {
+
+            if (plugin != PLUGIN_ID) {
+                return;
+            }
+            debugger
+        }
+
+        self.onBeforeBinding = function() {
+           ...
+        }
+
+onAfterTabChange(current, previous)
+onSettingsBeforeSave()
+...
+```
+
 https://docs.octoprint.org/en/master/plugins/viewmodels.html#callbacks
 
 # Knockout in Octoprint
@@ -110,6 +130,7 @@ Also on this page there are all "Event-Hooks" listed. E.g.:
 
 
 # Hijack Print/Resume-Button
+```javascript
     const startPrint = self.printerStateViewModel.print;
     self.printerStateViewModel.print = function confirmSpoolSelectionBeforeStartPrint() {
         alert("pre vaildate stuff");
@@ -128,6 +149,7 @@ Also on this page there are all "Event-Hooks" listed. E.g.:
         ...
         "printerStateViewModel"  
     ],
+```
 
 # Create Modal-Dialog
 You need two parts:
@@ -185,7 +207,7 @@ function showDialog(dialogId, confirmFunction){
 
     <i class="fa fa-spinner fa-spin" data-bind="enabled:!requestInProgress(), css: {disabled: requestInProgress()}, visible: requestInProgress()"></i> 
 
-
+```javascript
     self.requestInProgress(true);
     $.ajax({
         url: API_BASEURL + "plugin/"+PLUGIN_ID,
@@ -202,7 +224,7 @@ function showDialog(dialogId, confirmFunction){
     }).always(function(){
         self.requestInProgress(false);
     }) ;
-
+```
 # UI Libraries
 * [Bootstrap 2.3.2](https://getbootstrap.com/2.3.2/scaffolding.html#gridSystem)    
 * JQuery 2.2.4
