@@ -14,7 +14,8 @@ Also used for Reset-Function (see ...todo insert link ...)
                         startPrintDelay = 120,  # seconds
                         ....
 		)
-
+        # DON'T FORGET: default save function
+        octoprint.plugin.SettingsPlugin.on_settings_save(self, data)
 
 
 IMPORTEND: use custom binding!!!
@@ -33,6 +34,9 @@ def on_settings_save(self, data):
         layerExpressions = data.get(SETTINGS_KEY_LAYER_EXPRESSIONS)
         if layerExpressions is not None:
         ... do something usefull. eg. send message to browser ... 
+
+
+
 ```
 
 # JavaScript
