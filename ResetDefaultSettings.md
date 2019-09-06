@@ -6,6 +6,11 @@ TODO Screenshot
 3) Add "reset-action" as API-Call
 ```phyton
 import flask
+...
+
+# add in Contructor 
+octoprint.plugin.SimpleApiPlugin,
+...
 
     # to allow the frontend to trigger an update
     def on_api_get(self, request):
