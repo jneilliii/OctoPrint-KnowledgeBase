@@ -5,6 +5,8 @@ TODO Screenshot
 2) Include `ResetSettingsUtils.js` to `def get_assets(self)`
 3) Add "reset-action" as API-Call
 ```phyton
+import flask
+
     # to allow the frontend to trigger an update
     def on_api_get(self, request):
         if len(request.values) != 0:
@@ -17,7 +19,6 @@ TODO Screenshot
             if "resetSettings" == action:
                 self._settings.set([], self.get_settings_defaults())
                 self._settings.save()
-
                 return flask.jsonify(self.get_settings_defaults())
 ```
 4) Assign default values after reset to the ViewModel in your JavaScript
