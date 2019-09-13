@@ -1,7 +1,8 @@
 We have two options to send Data to the Plugin on the server
-1. via command
+1. via action-command
 2. via REST-Call
 
+# Action Command
 ```javascript
 $.ajax({
     url: API_BASEURL + "plugin/"+PLUGIN_ID_string+"?action=resetSettings",
