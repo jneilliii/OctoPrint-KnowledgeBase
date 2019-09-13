@@ -193,7 +193,7 @@ function showDialog(dialogId, confirmFunction){
             alert ("Do something");
             confirmFunction(myDialog);
         });
-        editDialog.modal({
+        myDialog.modal({
             //minHeight: function() { return Math.max($.fn.modal.defaults.maxHeight() - 80, 250); }
         }).css({
             width: 'auto',
