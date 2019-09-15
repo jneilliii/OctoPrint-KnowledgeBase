@@ -35,7 +35,7 @@ Make sure you have the right version (current 2.7.9)
 
 # Setup PyCharm
 Add Run Configuration
-
+```
     Select "Python" and press +
 
     Name:				OctoPrint Server
@@ -57,6 +57,7 @@ Add Run Configuration
 
         Arguments:		install -e .[develop,plugins]
         Working dir:	$ProjectFileDir$
+```
 
 # Add Virtual Printer
 
