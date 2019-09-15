@@ -1,1 +1,1 @@
-# TODO
+https://plugins.octoprint.org/help/registering/
