@@ -40,12 +40,21 @@ Add Run Configuration
 
     Name:				OctoPrint Server
     Script path:		D:\0_Projekte_private\3D_Printer\OctoPrint\OctoPlugs\OctoPrint\run
+
+/Users/o0632/0_Projekte/3DDruck/OctoPrint/octoprint_latest/run
+
     Parameters:			serve --debug
     Python interprere:	Python 2.7 (venv)	
     Working directory:	D:\0_Projekte_private\3D_Printer\OctoPrint\OctoPlugs\OctoPrint
 
+/Users/o0632/0_Projekte/3DDruck/OctoPrint/octoprint_latest
+
+
     External tool: Update dependencies
         Programm:		D:\0_Projekte_private\3D_Printer\OctoPrint\OctoPlugs\OctoPrint\venv\Scripts\pip.exe
+
+/Users/o0632/0_Projekte/3DDruck/OctoPrint/octoprint_latest/venv/bin/pip
+
         Arguments:		install -e .[develop,plugins]
         Working dir:	$ProjectFileDir$
 
