@@ -8,7 +8,7 @@ Message: ```This branch is X commits behind OctoPrint:gh-pages```
 
 ```
 Only once
-git add remote upstream https://github.com/OctoPrint/plugins.octoprint.org
+git remote add upstream https://github.com/OctoPrint/plugins.octoprint.org
 
 git fetch upstream
 git checkout gh-pages
