@@ -15,8 +15,12 @@ git checkout gh-pages
 git reset --hard upstream/gh-pages
 git push --force
 ```
-Message: 
+Message: ```This branch is even with OctoPrint:gh-pages```
 
-# Neue Plugin-Daten adden (z.B. per Datei-Explorer
-# Prüfen, ob der fork "even" mit original ist
-## Merge-request erstellen
+* Modify/Add new Plugin-Description
+e.g. ```/plugins.octoprint.org/_plugins/DeleteAfterPrint.md```
+
+* Build/Test your plugin description with 
+```bundle exec jekyll serve```
+
+* Create Merge Request
