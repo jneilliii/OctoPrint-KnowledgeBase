@@ -22,6 +22,10 @@ Message: ```This branch is even with OctoPrint:gh-pages```
 e.g. ```/plugins.octoprint.org/_plugins/DeleteAfterPrint.md```
 
 * Build/Test your plugin description with 
-```bundle exec jekyll serve```
+```
+Only once: 
+bundle
+
+bundle exec jekyll serve```
 
 * Create Merge Request
