@@ -1,6 +1,7 @@
+# Offical description
 https://plugins.octoprint.org/help/registering/
 
-Short
+# Short description
 * Fork of https://github.com/OctoPrint/plugins.octoprint.org
 * Checkout to your local filesystem
 
