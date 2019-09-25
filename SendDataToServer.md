@@ -3,6 +3,7 @@ We have two options to send Data to the Plugin on the server
 2. via REST-Call
 
 # Action Command
+## GET - Call
 ```javascript
 $.ajax({
     url: API_BASEURL + "plugin/"+PLUGIN_ID_string+"?action=resetSettings",
@@ -22,6 +23,39 @@ class DisplayLayerProgressAPIPlugin(...octoprint.plugin.SimpleApiPlugin,...):
 	def on_api_get(self, request):
 		if len(request.values) != 0:
 			action = request.values["action"]
+```
+
+## POST - Call
+If you want to send more data to the server (e.g. settings) then you need to send the data via POST
+and you need to declare the send action-command on the server side ```def get_api_commands(self)```
+
+```javascript
+            $.ajax({
+                url: API_BASEURL + "plugin/"+PLUGIN_ID,
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify({
+                    command: "checkboxStates",
+                    deleteWhenPrintCanceled: checkedDeleteCanceled
+                }),
+                contentType: "application/json; charset=UTF-8"
+            })
+```
+
+```python
+    def get_api_commands(self):
+        return dict(checkboxStates=[])
+
+    def on_api_command(self, command, data):
+        #if not user_permission.can():
+        #    return make_response("Insufficient rights", 403)
+
+        if command == "checkboxStates":
+            if data.has_key("deleteAfterPrint"):
+                self._deleteAfterPrintEnabled = bool(data["deleteAfterPrint"])
+            if  data.has_key("deleteWhenPrintCanceled"):
+                self._deleteWhenPrintCanceled = bool(data["deleteWhenPrintCanceled"])
+
 ```
 
 
