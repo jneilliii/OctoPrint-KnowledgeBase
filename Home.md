@@ -1,7 +1,7 @@
 # Welcome to the OctoPrint-KnowledgeBase wiki!
 
 This wiki covers the following topics (no special order):
-* [Cura Settings](CuraSettings)
+## OcotPrint
 * [Setup IDE](Setup-IDE)
 * [Plugin Template](PluginTemplate) 
 * [I18N](I18N)
@@ -15,5 +15,6 @@ This wiki covers the following topics (no special order):
 * [Distribute Plugin](DistributePlugin)
 * [Plugin Download Counter](DownloadCounter)
 
-
+## GitHub
+* [Global/Local Repository Settings](GitHubRepositorySettings)
 
