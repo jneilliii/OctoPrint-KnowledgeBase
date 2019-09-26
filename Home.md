@@ -18,3 +18,5 @@ This wiki covers the following topics (no special order):
 ## GitHub
 * [Global/Local Repository Settings](GitHubRepositorySettings)
 
+## CURA
+* [Cura Settings](CuraSettings)
