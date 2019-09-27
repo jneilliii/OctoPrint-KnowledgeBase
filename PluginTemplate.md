@@ -8,7 +8,11 @@ Preconditions:
 - Cookiecutter installed 
 	pip install "cookiecutter>=1.4,<1.7" 
 ```
-	octoprint dev plugin:new DryRun
+        cd Octoprint-latest/
+	virtualenv venv
+        source venv/bin/activate
+
+        octoprint dev plugin:new DryRun
 	plugin_package [octoprint_DryRun]:
 	plugin_name [OctoPrint-Deleteafterprint]: DryRun
 	repo_name [OctoPrint-DeleteAfterPrint]:OctoPrint-DryRun
