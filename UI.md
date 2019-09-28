@@ -6,6 +6,7 @@
 - [Hijack Print/Resume-Button](#hijack-printresume-button)
 - [Create Modal-Dialog](#create-modal-dialog)
 - [Spinning Button](#spinning-button)
+- [Table](#table)
 - [UI Libraries](#ui-libraries)
 
 
@@ -225,6 +226,74 @@ function showDialog(dialogId, confirmFunction){
         self.requestInProgress(false);
     }) ;
 ```
+# Table
+How to create a table with paging, sorting and filtering (all client-sie based)
+
+* Create a layout
+```html
+    <table id="printjobhistory_main_table" class="table table-striped table-hover table-condensed table-hover" style="clear: both;">
+        <thead>
+            <tr>
+                <th style="width: 43%">Filename</th>
+...
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: printJobHistorylistHelper.paginatedItems">
+            <tr>
+                <td>
+                    <span data-bind="text: fileName, attr: { title: fileName }"></span>
+                    <div class="additionalInfo">
+                        <div data-bind="visible: note">Note: <span data-bind="text: note"></span></div>
+                        <div data-bind="visible: spool">Spool: <span data-bind="text: spool"></span></div>
+                        <div data-bind="visible: user">User: <span data-bind="text: user"></span></div>
+                    </div>
+                </td>
+...
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="pagination pagination-mini pagination-centered">
+        <ul>
+            <li data-bind="css: {disabled: printJobHistorylistHelper.currentPage() === 0}">
+                <a href="#" data-bind="click: printJobHistorylistHelper.prevPage">«</a>
+            </li>
+        </ul>
+        <ul data-bind="foreach: printJobHistorylistHelper.pages">
+            <li data-bind="css: { active: $data.number === $root.printJobHistorylistHelper.currentPage(), disabled: $data.number === -1 }">
+                <a href="#" data-bind="text: $data.text, click: $root.printJobHistorylistHelper.changePage.bind($data, $data.number)"></a>
+            </li>
+        </ul>
+        <ul>
+            <li data-bind="css: {disabled: printJobHistorylistHelper.currentPage() === printJobHistorylistHelper.lastPage()}">
+                <a href="#" data-bind="click: printJobHistorylistHelper.nextPage">»</a>
+            </li>
+        </ul>
+    </div>
+```
+
+* Create table-model
+```javascript
+        var printHistoryJobItems = [];
+        var item = {
+            "fileName" : "hallo.gcode",
+...
+        }
+        ;
+        printHistoryJobItems.push(item);
+```
+
+* Create ListItemHelper for paging, sorting and filtering
+```javascript
+todo
+
+
+
+```
+* Create several functions for interaction
+
+
+
 # UI Libraries
 * [Bootstrap 2.3.2](https://getbootstrap.com/2.3.2/scaffolding.html#gridSystem)    
 * JQuery 2.2.4
