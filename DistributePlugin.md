@@ -26,6 +26,7 @@ e.g. ```/plugins.octoprint.org/_plugins/DeleteAfterPrint.md```
 Only once: 
 bundle
 
-bundle exec jekyll serve```
+bundle exec jekyll serve
+```
 
 * Create Merge Request
