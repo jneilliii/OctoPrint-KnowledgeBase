@@ -1,4 +1,4 @@
-# Install Octoprint
+# Install OctoPrint
 
 http://docs.octoprint.org/en/master/plugins/gettingstarted.html
 https://github.com/foosel/OctoPrint/wiki/Setup-on-Windows
