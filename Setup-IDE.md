@@ -77,3 +77,13 @@ devel:
     # Whether to enable the virtual printer and include it in the list of available serial connections.
     # Defaults to fa
 ```
+
+# Disable Safe-Mode
+
+edit in `config.yml`
+```
+server:
+    ignoreIncompleteStartup: true 
+    startOnceInSafeMode: false
+    ...
+```
