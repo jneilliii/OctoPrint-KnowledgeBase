@@ -26,3 +26,15 @@ Preconditions:
 	plugin_source [https://github.com/OllisGit/OctoPrint-DeleteAfterPrint]:
 	plugin_installurl [https://github.com/OllisGit/OctoPrint-DeleteAfterPrint/archive/master.zip]:
 ```
+* The new plugin folder structure is created in the current folder. Move it to where ever you like.
+
+* Create new GitHub Repository via Web-UI. Use the same name as you used during the creation.
+
+* Switch to your new plugin folder and init/push to the git repository:
+```
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/OllisGit/OctoPrint-SpoolManager.git
+git push -u origin master
+```
