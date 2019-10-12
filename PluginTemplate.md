@@ -43,7 +43,7 @@ __plugin_name__ = "Spoolmanager Plugin"
 * Switch to your new plugin folder and init/push to the git repository:
 ```
 git init
-git add README.md
+git add .
 git commit -m "first commit"
 git remote add origin https://github.com/OllisGit/OctoPrint-SpoolManager.git
 git push -u origin master
