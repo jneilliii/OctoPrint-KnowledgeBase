@@ -296,6 +296,7 @@ todo
 
 # UI Libraries
 * [Bootstrap 2.3.2](https://getbootstrap.com/2.3.2/scaffolding.html#gridSystem)    
+* [Fontawsome 3.2](https://fontawesome.com/v3.2.1/examples/)
 * JQuery 2.2.4
 * [Lodash 3.10.1](https://lodash.com/docs/3.10.1)
 * SockJS to 1.1.1
