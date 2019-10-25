@@ -1,7 +1,7 @@
 # Welcome to the OctoPrint-KnowledgeBase wiki!
 
 This wiki covers the following topics (no special order):
-## OcotPrint
+## OctoPrint
 * [Setup IDE](Setup-IDE)
 * [Plugin Template](PluginTemplate) 
 * [I18N](I18N)
@@ -20,3 +20,6 @@ This wiki covers the following topics (no special order):
 
 ## CURA
 * [Cura Settings](CuraSettings)
+
+## PeeWee (ORM Framework)
+* Good overview of "relations": https://medium.com/@prabhath_kiran/introduction-to-peewee-and-relations-1c72af26e1b9
