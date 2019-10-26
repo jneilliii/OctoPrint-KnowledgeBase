@@ -3,7 +3,7 @@
 http://docs.octoprint.org/en/master/plugins/gettingstarted.html
 https://github.com/foosel/OctoPrint/wiki/Setup-on-Windows
 
-Make sure you have the right version (current 2.7.9)
+Make sure you have the right python version (current 2.7.9)
 
 
     $ cd ~/devel
