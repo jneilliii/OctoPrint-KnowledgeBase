@@ -4,6 +4,20 @@
 
 `SETTINGS_KEY_START_PRINT_DELAY = "startPrintDelay"`
 
+## Get/Set Values
+```
+has
+get
+get_int
+get_float
+get_boolean
+set
+set_int
+set_float
+set_boolean
+remove
+```
+
 ## Default Values
 Also used for Reset-Function (see ...todo insert link ...)
 
