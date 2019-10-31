@@ -16,6 +16,8 @@ set_int
 set_float
 set_boolean
 remove
+
+Example: self._settings.set(["mySettingsKey"], myValue)
 ```
 
 ## Default Values
