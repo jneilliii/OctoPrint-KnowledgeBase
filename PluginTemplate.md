@@ -27,8 +27,11 @@ Preconditions:
 	plugin_installurl [https://github.com/OllisGit/OctoPrint-DeleteAfterPrint/archive/master.zip]:
 ```
 - The new plugin folder structure is created in the current folder. Move it to where ever you like.
+
+## First initial IDE-Settings
+For more details how to setup PyCharm look [here](Setup-IDE) 
 - Open the folder with you IDE (PyCharm)
--- ATTENTION: The Plugin-Generator doesn't like CamelCase-Names you need to correct the follwowing lines in ```__init__.py```
+- **ATTENTION:** The Plugin-Generator doesn't like CamelCase-Names you need to correct the follwowing lines in ```__init__.py```
 ```python
 ...
 displayName="Spoolmanager Plugin",
@@ -36,9 +39,10 @@ displayName="Spoolmanager Plugin",
 __plugin_name__ = "Spoolmanager Plugin"
 ...
 ```
-** Set Project-Interpreter in the Preferences to ```Octoprint-latest/venv```
-** Close IDE and copy ```runConfiguration``` Folder to ```.idea```
+#### - Set Project-Interpreter in the Preferences to ```Octoprint-latest/venv```
+#### - Close IDE and copy ```runConfiguration``` Folder to ```.idea```
 
+## Create GitHub Repository
 * Create new GitHub Repository via Web-UI. Use the same name as you used during the creation.
 * Switch to your new plugin folder and init/push to the git repository:
 ```
