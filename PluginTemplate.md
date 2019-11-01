@@ -26,9 +26,9 @@ Preconditions:
 	plugin_source [https://github.com/OllisGit/OctoPrint-DeleteAfterPrint]:
 	plugin_installurl [https://github.com/OllisGit/OctoPrint-DeleteAfterPrint/archive/master.zip]:
 ```
-* The new plugin folder structure is created in the current folder. Move it to where ever you like.
-* Open the folder with you IDE (PyCharm)
-** ATTENTION: The Plugin-Generator doesn't like CamelCase-Names you need to correct the follwowing lines in ```__init__.py```
+- The new plugin folder structure is created in the current folder. Move it to where ever you like.
+- Open the folder with you IDE (PyCharm)
+-- ATTENTION: The Plugin-Generator doesn't like CamelCase-Names you need to correct the follwowing lines in ```__init__.py```
 ```python
 ...
 displayName="Spoolmanager Plugin",
