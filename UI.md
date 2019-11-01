@@ -1,4 +1,5 @@
-- [Octoprint UI-Sections](#octoprint-ui-sections)
+- [OctoPrint UI-Sections](#octoprint-ui-sections)
+- [Plugin Names](#plugin-names)
 - [How does the UI-Communication work](#how-does-the-ui-communication-work)
 - [ViewModel Callbacks](#viewmodel-callbacks)
 - [Knockout in Octoprint](#knockout-in-octoprint)
@@ -8,7 +9,6 @@
 - [Spinning Button](#spinning-button)
 - [Table](#table)
 - [UI Libraries](#ui-libraries)
-
 
 # Octoprint UI-Sections
 The UI of Octoprint is seperated in the following areas. Each area could be adapted with a Jina2-Template.
@@ -20,6 +20,16 @@ Areas
 * <plugin_identifier>_navbar.jinja2		    -> Header
 * <plugin_identifier>_sidebar.jinja2		-> Left sidebar
 * <plugin_identifier>_settings.jinja2		-> Settings
+
+# Plugin Names
+The Name of a plugin is used in different contexts: Plugin-Repository, Plugin-Manager, Tab-Name (if used)
+(I am not talking about the Plugin-Identifier!!!)
+
+|Location|Description|
+|-------------|-------------|
+| setup.py <br>```plugin_name = "PrintJobHistory"```||
+| init.py <br>```__plugin_name__ = "Job History""```|Used in Settings menu on the left side| 
+| init.py <br>```def get_template_configs(self):```<br>```...```<br>```dict(type="tab", name="History")```|Tab-Name|
 
 # How does the UI-Communication work
 For Server-Side rendering http://jinja.octoprint.org/ is used.
