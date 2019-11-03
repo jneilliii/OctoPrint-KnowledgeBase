@@ -367,9 +367,10 @@ todo
 ```
 * Create several functions for interaction
 
+# Usefull 3rd party libs
+* https://github.com/itsjavi/fontawesome-iconpicker
 
-
-# UI Libraries
+# UI Libraries used by OctoPrint V1.3.10
 * [Bootstrap 2.3.2](https://getbootstrap.com/2.3.2/scaffolding.html#gridSystem)    
 * [Fontawsome 3.2](https://fontawesome.com/v3.2.1/examples/)
 * JQuery 2.2.4
