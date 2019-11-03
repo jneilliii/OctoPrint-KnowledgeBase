@@ -7,6 +7,7 @@
 - [Hijack Print/Resume-Button](#hijack-printresume-button)
 - [Create Modal-Dialog](#create-modal-dialog)
 - [Spinning Button](#spinning-button)
+- [ForEach / ObservableArray](#foreach)
 - [Table](#table)
 - [UI Libraries](#ui-libraries)
 
@@ -236,6 +237,70 @@ function showDialog(dialogId, confirmFunction){
         self.requestInProgress(false);
     }) ;
 ```
+
+# ForEach
+1. Create Item-Model with update-function for a row
+2. Create observable array and add some items to the array
+3. Attach jquery-fontpicker functionality to all rows
+4. Implement sync between jquery-fontpicker and observable items 
+
+```
+        // Single Item-Model
+        IconItem = function(data) {
+            this.iconName = ko.observable()
+            // Fill Item with (initial) data
+            this.update(data);
+        }
+        // Update the Item-Function
+        IconItem.prototype.update = function (data) {
+            var updateData = data || {}
+
+            this.iconName = ko.observable(updateData.iconName)
+        }
+
+        // collects all IconItems
+        self.allIcons = ko.observableArray();
+
+        // fill icon-collection with dummy values (or a loop or a complete data-array)
+        self.allIcons.push(new IconItem({
+            iconName: "fab fa-500px"
+        }));
+        self.allIcons.push(new IconItem({
+            iconName: "fas fa-ad"
+        }));
+
+        //        
+        self.onAfterBinding = function() {
+            // all inits / loop-rendering were done
+
+            // init jquery-iconpicker
+            allIconPickers = $('.supericonpicker').iconpicker();
+            // attach selection listener for all iconPickers
+            allIconPickers.each(function(index, item){
+                $(item).on('iconpickerSelected', function(event){
+                  newIcon = event.iconpickerValue;
+                  // get IconItem-Model and fill the selection
+                  iconItemModel = self.allIcons()[index];
+                  iconItemModel.iconName(newIcon);
+                });
+            });
+        }
+
+Multi-IconPicker
+<div data-bind="foreach: allIcons">
+  <div class="input-prepend input-block-level">
+    <span class="add-on" style="width: 25px;"><i class="fa-lg" data-bind="css: iconName"></i></span>
+    <input type="text" class="supericonpicker input-large text-right" data-bind="textInput: iconName"/>
+  </div>
+</div>
+```
+
+The example does not include the saveAll-feature, because it is just converting the array to json and send the data to the server, like this:
+```
+ko.toJSON(self.allIcons()); 
+--> "[{"iconName":"fab fa-500px"},{"iconName":"fas fa-ad"}]"
+```
+
 # Table
 How to create a table with paging, sorting and filtering (all client-sie based)
 
