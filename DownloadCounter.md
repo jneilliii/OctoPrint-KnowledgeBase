@@ -143,6 +143,7 @@ Following steps are needed:
 
 script:
 # debug  - echo 'Hello World'
+  - export PLUGIN_VERSION=$(cat setup.py | grep 'plugin_version = "*"' | cut -d '"' -f2) 
   - zip -r master *
 # debug  - ls -al
 
@@ -156,7 +157,7 @@ before_deploy:
   - git remote remove gh
 
 deploy:
-  name: "V1.X.X-draft"
+  name: "V${PLUGIN_VERSION}-draft"
   #prerelease: true
   draft: true
   provider: releases
