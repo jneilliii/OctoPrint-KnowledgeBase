@@ -7,6 +7,7 @@
 - [Hijack Print/Resume-Button](#hijack-printresume-button)
 - [Create Modal-Dialog](#create-modal-dialog)
 - [Spinning Button](#spinning-button)
+- [FontAwesome-Picker](#fontawesome-picker)
 - [ForEach / ObservableArray](#foreach)
 - [Table](#table)
 - [UI Libraries](#ui-libraries)
@@ -236,6 +237,26 @@ function showDialog(dialogId, confirmFunction){
     }).always(function(){
         self.requestInProgress(false);
     }) ;
+```
+# FontAwesome-Picker
+```
+IconPicker
+<div class="input-prepend input-block-level">
+  <span class="add-on" style="width: 25px;"><i class="fa-lg" data-bind="css: mySelectedIcon"></i></span>
+  <input id="myIconPicker" type="text" class="input-large text-right" data-bind="value: mySelectedIcon"/>
+ </div>
+
+// simple observer
+self.mySelectedIcon = ko.observable("fab fa-500px");  // initial icon
+
+// create picker-instance
+myIconPicker = $('#myIconPicker').iconpicker();
+
+// update observer during change
+myIconPicker.on('iconpickerSelected', function(event){
+  newIcon = event.iconpickerValue;
+  self.mySelectedIcon(newIcon);
+});
 ```
 
 # ForEach
