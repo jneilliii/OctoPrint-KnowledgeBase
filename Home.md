@@ -17,6 +17,9 @@ This wiki covers the following topics (no special order):
 
 ## GitHub
 * [Global/Local Repository Settings](GitHubRepositorySettings)
+### GitHub Polls (https://app.gh-polls.com/)
+- Install the App, enable all/or single repository, create poll-links
+- Insert poll-links into your Issue (Sample: https://github.com/OllisGit/OctoPrint-PrintJobHistory/issues/6)
 
 ## CURA
 * [Cura Settings](CuraSettings)
