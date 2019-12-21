@@ -5,7 +5,7 @@ https://github.com/foosel/OctoPrint/wiki/Setup-on-Windows
 
 Make sure you have the right python version (current 2.7.9)
 
-
+```
     $ cd ~/devel
     $ git clone https://github.com/foosel/OctoPrint
     [...]
@@ -20,6 +20,10 @@ if not working, try:
     (venv) $ octoprint --help
     Usage: octoprint [OPTIONS] COMMAND [ARGS]...
 
+start octoprint:
+    (venv) $ octoprint serve
+
+```
 ## exit venv
 
     $ deactivate
