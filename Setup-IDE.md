@@ -14,6 +14,8 @@ Make sure you have the right python version (current 2.7.9)
     [...]
     $ source venv/bin/activate
     (venv) $ pip install -e .[develop,plugins]
+if not working, try:
+    (venv) $ pip install -e .
     [...]
     (venv) $ octoprint --help
     Usage: octoprint [OPTIONS] COMMAND [ARGS]...
