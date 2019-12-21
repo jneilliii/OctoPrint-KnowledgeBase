@@ -33,11 +33,13 @@ start octoprint:
     $pip install https://get.octoprint.org/latest
 
 # Start Octoprint from terminal
-    
+```    
     $ octoprint serve
+or
+    $ OctoPrint serve
 
     Open Browser: http://localhost:5000/
-
+```
 
 # Setup PyCharm
 Add Run Configuration
@@ -47,7 +49,8 @@ Select "Python" and press +
 Name:			OctoPrint Server
 Script path:		/Users/o0632/0_Projekte/3DDruck/OctoPrint/octoprint_latest/run
 Parameters:		serve --debug
-Python interpreter:	Python 2.7 (venv)	
+Python interpreter:	Python 2.7 (venv)
+for Python 3 you need to add an Environment-Variable: LC_ALL=de_DE.utf-8	
 Working directory:	/Users/o0632/0_Projekte_privat/3DDruck/OctoPrint/octoprint_latest
 
 External tool: Update dependencies
