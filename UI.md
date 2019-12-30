@@ -10,7 +10,8 @@
 - [FontAwesome-Picker](#fontawesome-picker)
 - [ForEach / ObservableArray](#foreach)
 - [Table](#table)
-- [UI Libraries](#ui-libraries)
+- [File upload](#file-upload)
+- [UI Libraries](#ui-libraries-used-by-octoprint-v1310)
 
 # Octoprint UI-Sections
 The UI of Octoprint is seperated in the following areas. Each area could be adapted with a Jina2-Template.
@@ -387,6 +388,13 @@ todo
 
 ```
 * Create several functions for interaction
+
+# File upload
+## Client side
+ddddd
+
+## Server side
+cccccc
 
 # Usefull 3rd party libs
 * https://github.com/itsjavi/fontawesome-iconpicker
