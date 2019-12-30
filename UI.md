@@ -422,12 +422,68 @@ You need for the html/javascript-part:
 ```
 Some java-script magic:
 ```javascript
+self.csvFileUploadName = ko.observable();
+self.csvImportInProgress = ko.observable(false);
+...
+self.csvImportUploadButton = $("#settings-pjh-importcsv-upload");
+self.csvImportUploadData = undefined;
+self.csvImportUploadButton.fileupload({
+    dataType: "json",
+    maxNumberOfFiles: 1,
+    autoUpload: false,
+    headers: OctoPrint.getRequestHeaders(),
+    add: function(e, data) {
+        if (data.files.length === 0) {
+            // no files? ignore
+            return false;
+        }
+
+        self.csvFileUploadName(data.files[0].name);
+        self.csvImportUploadData = data;
+    },
+    done: function(e, data) {
+        debugger
+        self.csvFileUploadName(undefined);
+        self.csvImportUploadData = undefined;
+    },
+    error: function(response, data, errorMessage){
+        debugger
+        self.csvImportInProgress(false);
+        statusCode = response.status;       // e.g. 400
+        statusText = response.statusText;   // e.g. BAD REQUEST
+        responseText = response.responseText; // e.g. Invalid request
+    }
+});
+
+self.performCSVImportFromUpload = function() {
+    if (self.csvImportUploadData === undefined) return;
+
+    self.csvImportInProgress(true);
+    self.csvImportUploadData.submit();
+};
 ```
 
 
-## Server side
-cccccc
+## Server side (async sample without thread-implementation)
+```python
+@octoprint.plugin.BlueprintPlugin.route("/importCSV", methods=["POST"])
+def post_snapshot(self):
 
+	input_name = "file"
+	input_upload_path = input_name + "." + self._settings.global_get(["server", "uploads", "pathSuffix"])
+
+	if input_upload_path in flask.request.values:
+		# file was uploaded
+		sourceLocation = flask.request.values[input_upload_path]
+
+		# targetLocation = self._cameraManager.buildSnapshotFilenameLocation(snapshotFilename, False)
+		# os.rename(sourceLocation, targetLocation)
+		pass
+	else:
+		return flask.make_response("Invalid request, neither a file nor a path of a file to restore provided", 400)
+
+	return flask.jsonify(started=True)
+```
 # Usefull 3rd party libs
 * https://github.com/itsjavi/fontawesome-iconpicker
 
