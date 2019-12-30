@@ -398,9 +398,14 @@ You need for the html/javascript-part:
 - div output of selected filename
 - button for uploading
 ```html
-<div class="input-prepend"><span class="btn fileinput-button"><span>Browse...</span><input id="settings-pjh-importcsv-upload" type="file" name="file" data-url="/plugin/PrintJobHistory/importCSV" accept=".csv"></span>
+<div class="input-prepend">
+    <span class="btn fileinput-button">
+        <span>Browse...</span>
+        <input id="settings-pjh-importcsv-upload" type="file" name="file" data-url="/plugin/PrintJobHistory/importCSV" accept=".csv">
+    </span>
     <span class="add-on" data-bind="text: csvFileUploadName"></span>
 </div>
+
 ...
 <div class="control-group">
     <div class="controls">
