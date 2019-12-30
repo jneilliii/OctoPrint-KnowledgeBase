@@ -390,8 +390,28 @@ todo
 * Create several functions for interaction
 
 # File upload
+For the file upload this jquery-plugin is used be OctoPrint: https://github.com/blueimp/jQuery-File-Upload/wiki/API
+
 ## Client side
-ddddd
+You need for the html/javascript-part:
+- input type fiel, for browsing
+- div output of selected filename
+- button for uploading
+```html
+<div class="input-prepend"><span class="btn fileinput-button"><span>Browse...</span><input id="settings-pjh-importcsv-upload" type="file" name="file" data-url="/plugin/PrintJobHistory/importCSV" accept=".csv"></span>
+    <span class="add-on" data-bind="text: csvFileUploadName"></span>
+</div>
+...
+<div class="control-group">
+    <div class="controls">
+        <button class="btn btn-primary" data-bind="enable: !csvImportInProgress(), click: performCSVImportFromUpload"><i class="fa fa-spinner fa-spin" data-bind="visible: csvImportInProgress"></i> Upload & import</button>
+    </div>
+</div>
+```
+Some java-script magic:
+```javascript
+```
+
 
 ## Server side
 cccccc
