@@ -401,15 +401,22 @@ You need for the html/javascript-part:
 <div class="input-prepend">
     <span class="btn fileinput-button">
         <span>Browse...</span>
-        <input id="settings-pjh-importcsv-upload" type="file" name="file" data-url="/plugin/PrintJobHistory/importCSV" accept=".csv">
+        <input id="settings-pjh-importcsv-upload" 
+               type="file" 
+               name="file" 
+               data-url="/plugin/PrintJobHistory/importCSV" 
+               accept=".csv">
     </span>
     <span class="add-on" data-bind="text: csvFileUploadName"></span>
 </div>
-
 ...
 <div class="control-group">
     <div class="controls">
-        <button class="btn btn-primary" data-bind="enable: !csvImportInProgress(), click: performCSVImportFromUpload"><i class="fa fa-spinner fa-spin" data-bind="visible: csvImportInProgress"></i> Upload & import</button>
+        <button class="btn btn-primary" 
+                data-bind="enable: !csvImportInProgress(), click: performCSVImportFromUpload">
+            <i class="fa fa-spinner fa-spin" 
+               data-bind="visible: csvImportInProgress"></i> Upload & import
+        </button>
     </div>
 </div>
 ```
