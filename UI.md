@@ -476,8 +476,17 @@ def post_snapshot(self):
 		# file was uploaded
 		sourceLocation = flask.request.values[input_upload_path]
 
-		# targetLocation = self._cameraManager.buildSnapshotFilenameLocation(snapshotFilename, False)
-		# os.rename(sourceLocation, targetLocation)
+		# because we process in seperate thread we need to create our own temp file, the uploaded temp fiel will be deleted after this request-call
+		archive = tempfile.NamedTemporaryFile(delete=False)
+		archive.close()
+		shutil.copy(sourceLocation, archive.name)
+		sourceLocation = archive.name
+
+		thread = threading.Thread(target=self._processCSVUpload,
+								  args=(sourceLocation, self._sendCSVUploadResultToClient, self._logger))
+		thread.daemon = True
+		thread.start()
+
 		pass
 	else:
 		return flask.make_response("Invalid request, neither a file nor a path of a file to restore provided", 400)
