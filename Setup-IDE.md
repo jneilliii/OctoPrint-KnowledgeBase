@@ -67,15 +67,14 @@ edit in `config.yml`
 ```
 # Settings only relevant for development
 devel:
-
+  virtualPrinter:
+    enabled: true
+    forceChecksum: false
+    okAfterResend: false
+    okWitchLinenumber: false
   webassets:
     bundle: false
-	
-  # Settings for the virtual printer
-  virtualPrinter:
-
-    # Whether to enable the virtual printer and include it in the list of available serial connections.
-    # Defaults to fa
+    minify: false
 ```
 
 # Disable Safe-Mode
