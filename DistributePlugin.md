@@ -29,6 +29,6 @@ bundle
 bundle exec jekyll serve
 ```
 
-* Push changes to your repository
+* Commit/Push changes to your repository
 
 * Create Merge Request
