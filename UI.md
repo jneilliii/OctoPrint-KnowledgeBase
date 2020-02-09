@@ -502,3 +502,4 @@ def post_snapshot(self):
 * JQuery 2.2.4
 * [Lodash 3.10.1](https://lodash.com/docs/3.10.1)
 * SockJS to 1.1.1
+* [PNotify 2.1.0](https://sciactive.com/pnotify/)
